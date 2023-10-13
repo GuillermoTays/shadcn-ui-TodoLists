@@ -16,6 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"
+          defer
+        ></script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );

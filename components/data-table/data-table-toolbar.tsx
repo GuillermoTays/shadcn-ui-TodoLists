@@ -9,6 +9,7 @@ import { DataTableViewOptions } from "./data-table-view-options";
 
 import { priorities, statuses } from "../../data/data";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
+import { PlusCircleIcon } from "lucide-react";
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -37,6 +38,7 @@ export function DataTableToolbar<TData>({
             options={statuses}
           />
         )}
+
         {/* {table.getColumn("priority") && (
           <DataTableFacetedFilter
             column={table.getColumn("priority")}
@@ -54,6 +56,11 @@ export function DataTableToolbar<TData>({
             <Cross2Icon className="ml-2 h-4 w-4" />
           </Button>
         )}
+
+        <Button variant="outline" size="sm" className="h-8 border-dashed">
+          <PlusCircleIcon className="mr-2 h-4 w-4" />
+          Add
+        </Button>
       </div>
       <DataTableViewOptions table={table} />
     </div>
