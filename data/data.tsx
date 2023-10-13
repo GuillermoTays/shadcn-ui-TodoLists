@@ -25,31 +25,31 @@ export const labels = [
 ];
 
 export const statuses = [
-  {
-    value: "backlog",
-    label: "Backlog",
-    icon: QuestionMarkCircledIcon,
-  },
+  // {
+  //   value: "backlog",
+  //   label: "Backlog",
+  //   icon: QuestionMarkCircledIcon,
+  // },
   {
     value: "todo",
     label: "Todo",
     icon: CircleIcon,
   },
-  {
-    value: "in progress",
-    label: "In Progress",
-    icon: StopwatchIcon,
-  },
+  // {
+  //   value: "in progress",
+  //   label: "In Progress",
+  //   icon: StopwatchIcon,
+  // },
   {
     value: "done",
     label: "Done",
     icon: CheckCircledIcon,
   },
-  {
-    value: "canceled",
-    label: "Canceled",
-    icon: CrossCircledIcon,
-  },
+  // {
+  //   value: "canceled",
+  //   label: "Canceled",
+  //   icon: CrossCircledIcon,
+  // },
 ];
 
 export const priorities = [
