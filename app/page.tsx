@@ -13,7 +13,21 @@ async function getTasks() {
 
   const tasks = JSON.parse(data.toString());
 
-  return z.array(taskSchema).parse(tasks);
+  const todoData = await fetch("https://dummyjson.com/todos");
+
+  const response = await todoData.json();
+
+  const todos = response.todos.map((item: any) => {
+    return {
+      id: item.id.toString(),
+      title: item.todo,
+      status: item.completed ? "done" : "todo",
+      label: "bug",
+      priority: "medium",
+    };
+  });
+
+  return z.array(taskSchema).parse(todos);
 }
 
 export default async function Home() {
