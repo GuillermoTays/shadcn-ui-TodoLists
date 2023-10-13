@@ -27,6 +27,7 @@ import {
 
 import { DataTablePagination } from "./data-table-pagination";
 import { DataTableToolbar } from "./data-table-toolbar";
+import { DataTableRowAdd } from "./data-table-row-add";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
