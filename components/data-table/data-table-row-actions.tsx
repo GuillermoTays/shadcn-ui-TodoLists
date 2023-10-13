@@ -20,6 +20,8 @@ import {
 
 import { labels } from "../../data/data";
 import { taskSchema } from "../../data/schema";
+import { useContext } from "react";
+import { TasksContext } from "@/app/context/tasksContext";
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>;
@@ -29,6 +31,7 @@ export function DataTableRowActions<TData>({
   row,
 }: DataTableRowActionsProps<TData>) {
   const task = taskSchema.parse(row.original);
+  const { tasks, setTasks } = useContext(TasksContext);
 
   return (
     <DropdownMenu>
@@ -59,7 +62,15 @@ export function DataTableRowActions<TData>({
           </DropdownMenuSubContent>
         </DropdownMenuSub>
         <DropdownMenuSeparator /> */}
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => {
+            const newTasks = tasks.filter((item) => {
+              return item.id != task.id;
+            });
+
+            setTasks(newTasks);
+          }}
+        >
           Delete
           <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
         </DropdownMenuItem>

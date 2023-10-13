@@ -8,6 +8,7 @@ import { columns } from "@/components/data-table/columns";
 import { taskSchema } from "@/data/schema";
 import { Task } from "../data/schema";
 import { useEffect, useState } from "react";
+import { TasksContext } from "./context/tasksContext";
 
 // Simulate a database read for tasks.
 async function getTasks() {
@@ -71,7 +72,9 @@ export default function Home() {
           <UserNav />
         </div>
       </div>
-      <DataTable data={tasks} columns={columns} />
+      <TasksContext.Provider value={{ tasks, setTasks }}>
+        <DataTable data={tasks} columns={columns} />
+      </TasksContext.Provider>
     </div>
   );
 }
